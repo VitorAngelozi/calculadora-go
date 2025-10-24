@@ -1,55 +1,68 @@
-# calculadora-go
-Calculadora interativa em Go feita para estudo
-# calculadora-go
-Calculadora interativa em Go feita para estudo
 # Calculadora Interativa em Go
 
-Projeto desenvolvido em **Go (Golang)** com o objetivo de praticar conceitos de modularização, entrada e saída, controle de fluxo e pacotes. 
+Projeto desenvolvido em **Go (Golang)** com o objetivo de praticar conceitos de **modularização, entrada e saída, controle de fluxo e pacotes**.
 
-O programa consiste em uma **calculadora de terminal** capaz de realizar operações básicas e avançadas:
-
-- Soma
-- Subtração
-- Multiplicação
-- Divisão
-- Potência
-- Raiz quadrada
-- Resolução de equações do segundo grau
-
----
-
-- `main.go`: Contém o menu interativo, leitura de entradas do usuário e chamadas para o pacote `matematica`.  
-- `matematica/matematica.go`: Contém todas as funções matemáticas implementadas como um pacote separado, seguindo boas práticas de modularização.
+A aplicação é uma **calculadora de terminal** capaz de realizar operações básicas e avançadas de forma interativa.
 
 ---
 
 ## Funcionalidades
 
-1. **Soma, Subtração, Multiplicação, Divisão**  
-   - Operações básicas com tratamento de tipos (`int` e `float64`).  
+1. **Operações básicas**
+   - Soma
+   - Subtração
+   - Multiplicação
+   - Divisão
+   - Suporte a `int` e `float64`
 
-2. **Potência e Raiz Quadrada**  
-   - Utiliza funções do pacote `math` (`math.Pow`, `math.Sqrt`) para cálculos precisos.  
+2. **Operações avançadas**
+   - Potência (`math.Pow`)
+   - Raiz quadrada (`math.Sqrt`)
 
-3. **Equação do Segundo Grau**  
-   - Calcula raízes reais de equações do segundo grau (`ax² + bx + c = 0`).  
-   - Retorna `NaN` caso não haja soluções reais.  
+3. **Equação do segundo grau**
+   - Calcula raízes reais da equação `ax² + bx + c = 0`
+   - Retorna `NaN` caso não haja soluções reais
 
 ---
 
-## Como Executar
+## Estrutura do Projeto
 
-### Rodando diretamente com Go
+calculadora-go/
+│
+├─ main.go # Menu interativo e chamadas para o pacote matematica
+└─ matematica/
+└─ matematica.go # Funções matemáticas como pacote separado
+
+
+- `main.go`: Contém o menu, leitura de entradas e chamadas para o pacote.
+- `matematica/matematica.go`: Contém todas as funções matemáticas implementadas de forma modular.
+
+---
+
+## Pré-requisitos
+
+Antes de executar o projeto, certifique-se de ter o **Go instalado**:
+
 ```bash
+go version
+# Deve exibir algo como: go version go1.21.1 windows/amd64
+
+##Como executar
+###1- Clonando o projeto
+git clone https://github.com/seu-usuario/calculadora-go.git
+cd calculadora-go
+
+###2- rodando diretamente do go
 go run .
 
-### Rodando com o terminal
+###3. Compilando para gerar executável
+go build -o calculadora-go
 
-go build
-./calculadora-go   # No Linux/Mac
-calculadora-go.exe # No Windows
+# Executando:
+./calculadora-go   # Linux/Mac
+calculadora-go.exe # Windows
 
-##Exemplo de uso
+#Exemplo de uso
 ===================================
          CALCULADORA GO
 ===================================
@@ -66,4 +79,12 @@ Digite o primeiro número: 5
 Digite o segundo número: 7
 Resultado: 12
 
+Tecnologias Utilizadas
 
+Go (Golang)
+
+Pacote fmt para entrada e saída
+
+Pacote math para operações matemáticas avançadas
+
+Modularização com pacotes próprios
